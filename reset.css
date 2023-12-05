@@ -1,0 +1,198 @@
+﻿@charset "UTF-8";
+
+/* reset */
+audio:not([controls]) {
+		display: none;
+}
+button {
+		overflow: visible;
+		-webkit-appearance: button;
+}
+details {
+		display: block;
+}
+html {
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		overflow-y: scroll;
+		-webkit-text-size-adjust: 100%;
+}
+html, body {
+		width: 100%;
+}
+input {
+		-webkit-border-radius: 0;
+}
+@nest &[type="button"], &[type="reset"], &[type="submit"] {
+		input {
+				-webkit-appearance: button;
+		}}
+@nest &[type="number"] {
+		input {
+				width: auto;
+		}}
+@nest &[type="search"] {
+		input {
+				-webkit-appearance: textfield;
+		}		@nest &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+				input {
+						-webkit-appearance: none;
+				}		}}
+main {
+		display: block;
+}
+pre {
+		overflow: auto;
+}
+progress {
+		display: inline-block;
+}
+small {
+		font-size: var(--small-font-size, 75%);
+}
+summary {
+		display: block;
+}
+svg:not(:root) {
+		overflow: hidden;
+}
+template {
+		display: none;
+}
+textarea {
+		overflow: auto;
+}
+[hidden] {
+		display: none;
+}
+*,
+::before,
+::after {
+		box-sizing: inherit;
+}
+* {
+		font-size: inherit;
+		line-height: inherit;
+}
+::before,
+::after {
+		text-decoration: inherit;
+		vertical-align: inherit;
+}
+*,
+::before,
+::after {
+		border-style: solid;
+		border-width: 0;
+}
+* {
+		background-repeat: var(--background-repeat, no-repeat);
+		margin: 0;
+		padding: 0;
+}
+:root {
+		background-color: var(--html-background-color, #ffffff);
+		box-sizing: var(--html-box-sizing, border-box);
+		color: var(--html-color, #000000);
+		cursor: var(--html-cursor, default);
+		font: var(--html-font-size, 100%)/var(--html-line-height, 1.5) var(--font-family, sans-serif);
+		text-rendering: var(--html-text-rendering, optimizeLegibility);
+}
+a {
+		text-decoration: var(--anchor-text-decoration, none);
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+		vertical-align: var(--media-element-vertical-align, middle);
+}
+button,
+input,
+select,
+textarea {
+		background-color: var(--form-element-background-color, transparent);
+}
+button,
+input,
+select,
+textarea {
+		color: inherit;
+		font-family: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+}
+button,
+[type="button"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="submit"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+		min-height: var(--form-element-min-height, 1.5em);
+}
+code,
+kbd,
+pre,
+samp {
+		font-family: var(--monospace-font-family, monospace), monospace;
+}
+nav ol,
+nav ul {
+		list-style: var(--nav-list-style, none);
+}
+select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+}
+@nest &::-ms-expand {
+		select {
+				display: none;
+		}}
+@nest &::-ms-value {
+		select {
+				color: currentColor;
+		}}
+table {
+		border-collapse: var(--table-border-collapse, collapse);
+		border-spacing: var(--table-border-spacing, 0);
+}
+textarea {
+		resize: var(--textarea-resize, vertical);
+}
+::selection {
+		background-color: var(--selection-background-color, #b3d4fc);
+		color: var(--selection-background-color, #4c2b03);
+		text-shadow: var(--selection-text-shadow, none);
+}
+[aria-busy="true"] {
+		cursor: progress;
+}
+[aria-controls] {
+		cursor: pointer;
+}
+[aria-disabled] {
+		cursor: default;
+}
+[hidden][aria-hidden="false"] {
+		clip: rect(0 0 0 0);
+		display: inherit;
+		position: absolute;
+}
+@nest &:focus {
+		[hidden][aria-hidden="false"] {
+				clip: auto;
+		}}

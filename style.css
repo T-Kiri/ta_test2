@@ -1,0 +1,316 @@
+﻿@import url("reset.css");
+
+/* base */
+html, body {
+    height: 100%;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", Osaka, "MS PGothic", arial, helvetica, sans-serif;
+    font-feature-settings: "pwid" 1;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: unset;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+    color: #3f515e;
+    background: #aecdb5;
+    /* overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; */
+}
+a, p, span, div, li, ul, h1, h2 {
+    display: block;
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #4e7d5a;
+    -webkit-transition: 0.6s ease-out;
+    transition: 0.6s ease-out;
+}
+a:hover {
+    opacity: .6;
+}
+/* IE11でsvg崩れ防止 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+      width: 100%;
+  }
+}
+/* theme */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin: 0 auto;
+}
+.progress-bar > span {
+    width: 0%;
+    height: 100%;
+    background: rgba(190, 204, 219, 0.2);
+    background: #4e7d5a;
+    -webkit-transition: 0.7s 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+    transition: 0.7s 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+}
+header {
+    position: relative;
+    padding: 64px 30px 35px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+header > h1 {
+    font-size: 23px;
+}
+header > p {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .7;
+    line-height: 1.4;
+    margin: 5px auto 0;
+}
+main {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.questions {
+    padding: 0 30px;
+}
+.questions > li {
+    font-size: 15px;
+    width: 100%;
+    margin: 0;
+    padding: 30px 28px;
+    border-radius: 14px;
+    box-shadow: 7px 7px 12px -2px rgba(161, 183, 205, 0.5), -5px -5px 8px -2px rgba(255, 255, 255, 0.9), 10px 10px 32px -3px rgba(161, 183, 205, 0.15) inset, -6px -6px 22px -13px rgba(255, 255, 255, 0.6) inset;
+    -webkit-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    opacity: 0;
+}
+.questions > li > p {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: .4;
+    margin-bottom: 1px;
+}
+.questions > li .last-q {
+    text-align: center;
+    font-size: 17px;
+    opacity: 1;
+}
+.questions > li > h2 {
+    font-size: 17px;
+}
+.questions > li .select {
+    margin: 18px 0 10px;
+}
+.questions > li .select > p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    vertical-align: top;
+    box-shadow: 2px 2px 6px 1px rgba(161, 183, 205, 0.6), -1px -1px 5px 2px white, 10px 10px 32px -3px rgba(161, 183, 205, 0.15) inset, -6px -6px 22px -13px rgba(255, 255, 255, 0.6) inset;
+}
+.questions > li .select > p:hover {
+    background: #4e7d5a;
+    color: #fff;
+    -webkit-transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+    transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+}
+.questions > li .back-list {
+		margin: 4px 0 0;
+		display: inline-block;
+		padding: 4px 8px;
+		color: #4e7d5a;
+		cursor: pointer;
+		-webkit-transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+		transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+}
+.questions > li .back-list:hover {
+		opacity: .6;
+}
+.questions > li .send {
+		position: relative;
+		margin: 18px auto 10px;
+		max-width: 240px;
+}
+.questions > li .send > a {
+		color: #fff;
+		background: #4e7d5a;
+		font-size: 15px;
+		margin-bottom: 12px;
+		padding: 12px;
+		text-align: center;
+		border-radius: 8px;
+		box-shadow: 2px 2px 6px 1px rgba(161, 183, 205, 0.6), -1px -1px 5px 2px white, 10px 10px 32px -3px rgba(161, 183, 205, 0.15) inset, -6px -6px 22px -13px rgba(255, 255, 255, 0.6) inset;
+		-webkit-transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+		transition: 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+}
+.ansewer {
+		margin: 0 30px;
+		font-size: 18px;
+		padding: 30px 28px;
+		border-radius: 14px;
+		box-shadow: 7px 7px 12px -2px rgba(161, 183, 205, 0.5), -5px -5px 8px -2px rgba(255, 255, 255, 0.9), 10px 10px 32px -3px rgba(161, 183, 205, 0.15) inset, -6px -6px 22px -13px rgba(255, 255, 255, 0.6) inset;
+		-webkit-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+		transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+		text-align: justify;
+}
+.ansewer > p {
+		font-size: 14px;
+		font-weight: bold;
+		opacity: .4;
+		margin: 16px 0 14px;
+}
+.back {
+		margin: 30px 30px 0;
+}
+.back a {
+		display: inline-block;
+}
+.social {
+		letter-spacing: -.4em;
+		font-size: 0;
+		text-align: center;
+		margin: 0 auto;
+		padding: 5% 30px 34px;
+}
+.social li {
+		letter-spacing: normal;
+		font-size: 16px;
+		display: inline-block;
+		width: 36px;
+		border-radius: 8px;
+		overflow: hidden;
+		margin: 0 3% 3% 0;
+		box-shadow: 2px 2px 6px 1px rgba(161, 183, 205, 0.6), -1px -1px 5px 2px white, 10px 10px 32px -3px rgba(161, 183, 205, 0.15) inset, -6px -6px 22px -13px rgba(255, 255, 255, 0.6) inset;
+}
+.social li:last-child {
+		margin-right: 0;
+}
+.social svg {
+		width: 100%;
+		height: 100%;
+		fill-rule: evenodd;
+		clip-rule: evenodd;
+		stroke-linejoin: round;
+		stroke-miterlimit: 2;
+}
+.social svg path {
+		fill: #3f515e;
+}
+/*footer {
+		font-size: 14px;
+		text-align: center;
+		margin: 0 0 40px;
+}
+*/
+
+
+
+
+
+
+footer { 
+
+/* 結果重ねるボックスの設定 */
+.layer-in{
+  /* ボックス配置指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* 上下左右中央のときのみ */
+  width: 100px; 
+  height: 10px;
+}
+
+/* 結果img基本設定 */
+.layer-img{
+  padding: 200% 0px 0px;
+  width: 150px;
+  height: auto;
+}
+
+/* 質問重ねるボックスの設定 */
+.layer-in-2{
+    /* ボックス配置指定 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    /* 上下左右中央のときのみ */
+    width: 200px; 
+    height: 10px;
+  }
+
+/* 質問img基本設定 */
+.layer-img-2{
+    padding: 100% 0px 0px;
+    width: 250px;
+    height: auto;
+  }
+}
+
+
+/* state */
+.left {
+		margin-left: -200% !important;
+		opacity: 0;
+}
+.right {
+		margin-left: 200% !important;
+		opacity: 0;
+}
+.opas {
+		opacity: 1 !important;
+}
+.click {
+	-webkit-animation: click .6s linear;
+	animation: click .6s linear;
+}
+@keyframes click {
+	0% {transform: scale(1);}
+	15% {transform: scale(.975);}
+	100% {transform: scale(1);}
+}
+@-webkit-keyframes click {
+	0% {-webkit-transform: scale(1);}
+	15% {-webkit-transform: scale(.975);}
+	100% {-webkit-transform: scale(1);}
+}
+@media (min-width: 768px) {
+		.questions > li .select {
+				letter-spacing: -.4em;
+				font-size: 0;
+		}		.questions > li .select > p {
+				font-size: 15px;
+				letter-spacing: normal;
+				display: inline-block;
+				width: 48.5%;
+				margin-right: 3%;
+		}		.questions > li .select > p:nth-child(even) {
+				margin-right: 0;
+		}}
